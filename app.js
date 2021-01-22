@@ -25,7 +25,7 @@ var cardRotate = function (e) {
     card.style.transition = "none";
     let defaultTurn = 0.04 * (window.innerWidth / 2 - cardRect.width / 2 - cardRect.left);
     let yTurn = (x - window.scrollX - cardRect.width / 2) / (window.innerWidth / 25) + defaultTurn;
-    let xTurn = (y - window.scrollY - cardRect.height / 2) / (window.innerHeight / 30);
+    let xTurn = (y - window.scrollY - cardRect.height / 2 - cardRect.top) / (window.innerHeight / 30);
     card.style.transform = `rotateY(${yTurn}deg) rotateX(${-xTurn}deg)`
     console.log(x);
 };
