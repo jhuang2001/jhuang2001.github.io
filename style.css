@@ -1,0 +1,59 @@
+
+body{
+    background-image: url("src/img/gradientBack.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    perspective: 2000px;
+}
+
+.titleCard{
+    transform-style: preserve-3d;
+
+    top:5rem;
+    left:5%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 200%;
+    text-align: center;
+    padding-top: 2%;
+    width: 420px;
+    
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.5),
+        -2px -3px rgba(255,255,255,0.5),
+        2px 2px 4px rgba(85,85,85,0.5);
+    border-radius: 30px;
+
+    background: linear-gradient(to bottom right,
+        rgba(255,255,255,0.5), rgba(255,255,255,0.05));
+    font-style: italic;
+    color: ivory;
+    position:sticky;
+    overflow:visible;
+    z-index: 1;
+}
+
+.name{
+    margin: 0%;
+    transition: all 0.75s ease-out;
+    z-index: 3;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    perspective: 2000px;
+    top: 0;
+    position:sticky;
+}
+
+.summary{
+    padding-bottom: 5%;
+    transition: all 0.75s ease-out;
+    z-index: 3;
+}
+
+.profilePic{
+    width: 80%;
+    z-index: 3;
+    transition: all 0.75s ease-out;
+}
