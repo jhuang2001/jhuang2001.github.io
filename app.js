@@ -15,6 +15,8 @@ var cardRotate = function (e) {
         var touch = evt.touches[0] || evt.changedTouches[0];
         x = touch.pageX;
         y = touch.pageY;
+
+        if(document.elementFromPoint(x,y) == card) cardPop(e);
     } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
         x = e.clientX;
         y = e.clientY;
@@ -56,9 +58,11 @@ container.addEventListener("touchmove", cardRotate, false);
 
 card.addEventListener("mouseenter", cardPop, false);
 card.addEventListener("touchstart", cardPop, false);
+card.addEventListener("touchmove", cardPop, false);
 
 card.addEventListener("mouseleave", cardResetPop, false);
 card.addEventListener("touchend", cardResetPop, false);
+window.addEventListener("touchend", cardResetPop, false);
 
 window.addEventListener("mouseout", cardResetRotation, false);
 window.addEventListener("touchend", cardResetRotation, false);
