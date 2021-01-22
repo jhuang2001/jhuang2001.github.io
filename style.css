@@ -1,3 +1,11 @@
+html{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body{
+    position: relative;
+}
 
 body{
     background-image: url("src/img/gradientBack.jpg");
