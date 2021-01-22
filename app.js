@@ -32,7 +32,7 @@ var cardRotate = function (e) {
 
 var cardResetRotation = function (e){
     console.log("reset");
-    card.style.transition = "all 0.75s ease "
+    card.style.transition = "all 0.78s ease "
     //myName.style.transform = "translateZ(50px)"
     let defaultTurn = 0.04 * (window.innerWidth / 2 - cardRect.width / 2 - cardRect.left);
     card.style.transform = `rotateY(${defaultTurn}deg) rotateX(0deg)`;
@@ -54,6 +54,7 @@ var cardResetPop = function (e){
 
 
 container.addEventListener("mousemove", cardRotate, false);
+container.addEventListener("touchstart", cardRotate, false);
 container.addEventListener("touchmove", cardRotate, false);
 
 card.addEventListener("mouseenter", cardPop, false);
