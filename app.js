@@ -36,22 +36,29 @@ var cardResetRotation = function (e){
     card.style.transform = `rotateY(${defaultTurn}deg) rotateX(0deg)`;
 };
 
-container.addEventListener("mousemove", cardRotate, false);
-container.addEventListener("touchmove", cardRotate, false);
-
-card.addEventListener("mouseenter", (e) => {
+var cardPop = function (e){
     //console.log("TEST");
     card.style.transition = "none";
     profile.style.transform = "translateZ(250px) rotateZ(12deg)"
     myName.style.transform = "translateZ(300px)"
     description.style.transform = "translateZ(150px)"
-});
+};
 
-card.addEventListener("mouseleave", (e) => {
+var cardResetPop = function (e){
     profile.style.transform = "translateZ(5px) rotateZ(0deg)"
     myName.style.transform = "translateZ(50px)"
     description.style.transform = "translateZ(0px)"
-});
+};
+
+
+container.addEventListener("mousemove", cardRotate, false);
+container.addEventListener("touchmove", cardRotate, false);
+
+card.addEventListener("mouseenter", cardPop, false);
+card.addEventListener("touchstart", cardPop, false);
+
+card.addEventListener("mouseleave", cardResetPop, false);
+card.addEventListener("touchend", cardResetPop, false);
 
 window.addEventListener("mouseout", cardResetRotation, false);
 window.addEventListener("touchend", cardResetRotation, false);
